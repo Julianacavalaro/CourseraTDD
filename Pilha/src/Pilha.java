@@ -1,12 +1,12 @@
 
 public class Pilha {
 
-	private Object elemento;
+	private Object[] elementos = new Object[10];
 	private int quantidade;
 	
 	public boolean estaVazia() {
 		// TODO Auto-generated method stub
-		return (elemento == null);
+		return quantidade == 0;
 	}
 
 	public int tamanho() {
@@ -15,13 +15,19 @@ public class Pilha {
 	}
 
 	public void empilha(Object elemento) {
-		this.elemento = elemento; // guardando o elemento	
+		this.elementos[quantidade] = elemento; // guardando o elemento	
 		quantidade++;
 	}
 
 	public Object topo() {
 		// TODO Auto-generated method stub
-		return elemento;
+		return elementos[quantidade - 1];
+	}
+
+	public Object desempilha() {
+		Object topo = topo();
+		quantidade--;
+		return topo;
 	}
 
 }
