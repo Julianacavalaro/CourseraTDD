@@ -1,6 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +15,7 @@ class TesteTradutor {
 	@Test
 	public void tradutorSemPalavras() {
 		//fail("Not yet implemented");
-		Tradutor t = new Tradutor(); 
+		//Tradutor t = new Tradutor(); 
 		assertTrue(t.estaVazio());
 	}
 	@Test
@@ -36,5 +35,25 @@ class TesteTradutor {
 		assertEquals("good", t.traduzir("bom")); //Quando traduzir "bom", retornar "good";
 		assertEquals("bad", t.traduzir("ruim"));
 	}
+	
+	@Test
+	public void duasTraducoesMesmaPalavra() {
+		//Tradutor t = new Tradutor();
+		t.adicionaTraducao("bom","good");
+		t.adicionaTraducao("bom","nice");
+		assertFalse(t.estaVazio());
+		assertEquals("good, nice", t.traduzir("bom")); //Quando traduzir "bom", retornar "good";
+	}
+	
+	@Test
+	public void traduzirFrase() {
+		//Tradutor t = new Tradutor();
+		t.adicionaTraducao("guerra", "war");
+		t.adicionaTraducao("é", "is");
+		t.adicionaTraducao("ruim", "bad");
+		assertFalse(t.estaVazio());
+		assertEquals("war is bad", t.traduzirFrase("guerra é ruim")); //Quando traduzir "bom", retornar "good";
+	}
+
 
 }
