@@ -1,20 +1,23 @@
+import java.util.HashMap;
+import java.util.Map;
 
 public class Tradutor {
 
-		private String traducao;
+		private Map<String,String> traducoes = new HashMap<>();
 
 	public Boolean estaVazio() {
 		//return true;
-		return (traducao==null);
+		//return (traducao==null);
+		return traducoes.isEmpty();
 	}
 
-	public void adicionaTraducao(String palavra, String traducao) {//adiciona uma palavra, retorna a palavra e sua tradução
-		this.traducao = traducao;
+	public void adicionaTraducao(String palavra,String traducao) {//adiciona uma palavra, retorna a palavra e sua tradução
+		this.traducoes.put(palavra, traducao);
 	}
 
-	public Object traduzir(String palavra) {
+	public String traduzir(String palavra) {
 		// TODO Auto-generated method stub
-		return traducao;
+		return traducoes.get(palavra);
 	}
 
 
