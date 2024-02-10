@@ -27,14 +27,18 @@ public class Tradutor {
 		String[] palavras = frase.split(" ");//Quebrando a frase em palavras quando separada por " "(espaço em branco)
 		String fraseTraduzida = ""; //declação inicial
 		for(String palavra : palavras) { //For-each pode ser traduzido como “para cada”. É um laço For que busca uma correspondência pré-determinada para funcionar.
-		 /* for (tipo da variável: array) 
-		{ 
-    		comandos usando a variável;
-		}*/
-			String traducao = traduzir(palavra);
+			String traducao = primeiraTraducao(palavra);
 			fraseTraduzida = fraseTraduzida + " " + traducao;
 		}
 		return fraseTraduzida.trim(); //.trim() retira o espaço inicial
+	}
+
+	private String primeiraTraducao(String palavra) {
+		String traducao = traduzir(palavra);
+		if(traducao.contains(",")) { //Se traducao contem ","
+			traducao = traducao.substring(0, traducao.indexOf(","));
+		}
+		return traducao;
 	}
 
 

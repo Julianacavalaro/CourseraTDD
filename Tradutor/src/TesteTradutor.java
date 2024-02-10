@@ -54,6 +54,17 @@ class TesteTradutor {
 		assertFalse(t.estaVazio());
 		assertEquals("war is bad", t.traduzirFrase("guerra é ruim")); //Quando traduzir "bom", retornar "good";
 	}
+	
+	@Test
+	public void traduzirFraseCom2TraducoesParaAMesmaPalavra() {
+		//Tradutor t = new Tradutor();
+		t.adicionaTraducao("guerra", "war");
+		t.adicionaTraducao("é", "is");
+		t.adicionaTraducao("boa", "nice");
+		t.adicionaTraducao("boa", "good");
+		assertFalse(t.estaVazio());
+		assertEquals("war is nice", t.traduzirFrase("guerra é boa")); //Quando traduzir "bom", retornar "good";
+	}
 
 
 }
