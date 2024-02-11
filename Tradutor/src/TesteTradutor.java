@@ -64,6 +64,7 @@ class TesteTradutor {
 		t.adicionaTraducao("boa", "good");
 		assertFalse(t.estaVazio());
 		assertEquals("war is nice", t.traduzirFrase("guerra é boa")); //Quando traduzir "bom", retornar "good";
+		
 	}
 
 
