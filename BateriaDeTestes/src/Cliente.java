@@ -12,18 +12,28 @@ public class Cliente {
 		}
 		
 		public int calculateDiscount() {
-			int discount = 0;
-			if(_isSenior ) {	discount = 0;
+			if(_isSenior ) return 0;
+			if(_isAlreadySubsidized) return 250;
+			if(_isPartTime) return 250;
+				return 500;
+			//int discount = 0;
+		/*	if(_isSenior ) {//	discount = 0;
+				return 0;
 			}else {
-				if(_isAlreadySubsidized) {	discount = 250;
+				if(_isAlreadySubsidized) {//	discount = 250;
+					return 250;
 				}else {
-					if(_isPartTime) { discount = 250;
+					if(_isPartTime) {// discount = 250;
+						return 250;
 					}else {
-						discount = 500;
+						//discount = 500;
+						return 500;
 					}
 				}
 			}
-				return discount;
+			//	return discount;
+			 */
+			 
 			}
 }
 		
