@@ -11,6 +11,20 @@ public class Cliente {
 			this._isPartTime = notFTime;
 		}
 		
+
+			/*	static class StrSplit{
+			  public static void main(String []args){
+			 //  String strMain = "Alpha, Beta, Delta, Gamma, Sigma";
+					String semanas = "Sabado,Domingo,Segunda,Sexta,Quarta";
+			    String[] dias = semanas.split(",");
+			    for (int i=0; i < dias.length; i++)
+			    {
+			      System.out.println(dias[i]);
+			    }
+			  }
+			}
+			*/
+		
 		public int calculateDiscount() {
 			if(_isSenior ) return 0;
 			if(_isAlreadySubsidized) return 250;
